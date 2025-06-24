@@ -1,0 +1,17 @@
+services:
+  php:
+    extends:
+      file: docker-compose.yml
+      service: php
+    build:
+      args:
+        INSTALL_XDEBUG: true
+
+  nginx:
+    extends:
+      file: docker-compose.yml
+      service: nginx
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  App\Controllers\:
+    resource: '../Controllers'
+    public: true
+    tags: ['controller.service_arguments']
