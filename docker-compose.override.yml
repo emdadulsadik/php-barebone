@@ -5,7 +5,7 @@ services:
       service: php
     build:
       args:
-        INSTALL_XDEBUG: true
+        INSTALL_XDEBUG: "true"
 
   nginx:
     extends:
