@@ -1,6 +1,6 @@
 FROM php:8.2-fpm
 
-ARG INSTALL_XDEBUG=false
+ARG ENABLE_XDEBUG=false
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Install Xdebug if requested
-RUN if [ "$INSTALL_XDEBUG" = "true" ]; then \
+RUN if [ "$ENABLE_XDEBUG" = "true" ]; then \
     pecl install xdebug && \
     docker-php-ext-enable xdebug; \
     fi

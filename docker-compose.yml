@@ -3,7 +3,7 @@ services:
     build:
       context: ./docker/php
       args:
-        INSTALL_XDEBUG: "false"
+        ENABLE_XDEBUG: ${ENABLE_XDEBUG}
     volumes:
       - ./:/var/www/html
     working_dir: /var/www/html
